@@ -9,6 +9,19 @@ return {
 
   -- These are some examples, uncomment them if you want to see them work!
   {
+    "hrsh7th/nvim-cmp",
+    opts = {
+      mapping = {
+        ["<S-CR>"] = require("cmp").mapping.confirm {
+          select = true,
+          behavior = require("cmp").ConfirmBehavior.Replace,
+        },
+        ["<CR>"] = require("cmp").config.disable,
+      },
+    },
+  },
+
+  {
     "neovim/nvim-lspconfig",
     config = function()
       require("nvchad.configs.lspconfig").defaults()
